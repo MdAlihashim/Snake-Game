@@ -1,0 +1,155 @@
+:root {
+  /* BG Colors */
+
+  --bg-primary-color: #222;
+  --bg-food-color: #d85656;
+  --bg-snake-color: #bd8c8c;
+  --text-primary-color: #eee;
+
+  /* Border Colors */
+
+  --border-primary-color: #ccc;
+
+  /* Spaces */
+
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont;
+  color: var(--text-primary-color);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary-color);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infos {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #555;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid var(--border-primary-color);
+}
+
+.block {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 50%;
+}
+
+.score,
+.high-score,
+.time {
+    border: 1px solid var(--border-primary-color);
+    padding: var(--space-xs);
+    border-radius: var(--space-xs);
+}
+
+.fill {
+    background-color: var(--bg-snake-color);
+}
+.food {
+    background-color: var(--bg-food-color);
+    border-radius: 50%;
+}
+
+.pages {
+    width: 100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+}
+
+.start-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  button {
+    padding: 20px 70px;
+    border-radius: 10px;
+    background-color: #bd8c8c;
+    border: none;
+    cursor: pointer;
+  }
+
+}
+
+.start-game-hide {
+  backdrop-filter: none;
+  display: none;
+}
+
+.out-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  button {
+    padding: 20px 70px;
+    background-color: #bd8c8c;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+}
+
+.out-game-hide {
+  backdrop-filter: none;
+  display: none;
+}
